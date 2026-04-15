@@ -1,17 +1,41 @@
-import java.util.Arrays;
+import java.util.List;
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+       int cantidadEstudiantes = 60000000;
+       int cantidadConsultas = 40000;
+        
+       System.out.println("Generando Estudiantes...");
 
-        int nu =10;
-        int [] array =new int[] {1,2,6,70,5};
-        System.out.println(nu);
-        System.out.println(Arrays.toString(array));
-        for(int i= 0; i<array.length;i++){
-            System.out.println(i);
+       List<Estudiante> estudiantes = Generador.generarEstudiantes(cantidadEstudiantes);
+    //    for(Estudiante est : estudiantes ){
+    //     System.out.println(est.nombre);
+    //    }
+
+       //Buscas si existe el usuario con CI 1999993
+       String cedulaBuscar = "51999993";
+       for (Estudiante est : estudiantes){
+        if (est.cedula.equals(cedulaBuscar) ){
+            System.out.println("Existe");
+            break;
         }
-        for(int i : array){
-            System.out.println(i);
-        }
+       }
+
+    //    int inicio = 0;
+    //    int fin = estudiantes.size()-1;
+    //    while(inicio<= fin){
+    //     int medio = (inicio+fin)/2;
+    //     Estudiante  actual = estudiantes.get(medio); //Solo coge el del medio 
+    //     int comparacion = actual.cedula.compareTo(cedulaBuscar);//Comapra conla cedula que estoy buscando 
+    //     if (comparacion == 0){
+    //         System.out.println("Existe");
+    //         break;
+    //     }else if(comparacion<0) {
+    //         inicio = medio+1;
+    //     }else{
+    //         fin = medio-1;
+    //     }
+    //    }
     }
+    // ESP cntrl+}] comentar y descomentar
+    // ENG cntrl+/
 }
